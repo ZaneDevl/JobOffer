@@ -1,0 +1,97 @@
+<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">Aggiungi una Nuova Offerta</h1>
+    
+    <form (ngSubmit)="onSubmit()" [formGroup]="offertaForm" class="shadow-lg p-4 rounded bg-light">
+      <div class="form-group mb-3">
+        <label for="titolo" class="form-label">Titolo</label>
+        <input
+          type="text"
+          id="titolo"
+          class="form-control"
+          formControlName="titolo"
+          placeholder="Inserisci il titolo dell'offerta"
+          required
+        />
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="descrizione" class="form-label">Descrizione Breve</label>
+        <textarea
+          id="descrizione"
+          class="form-control"
+          formControlName="descrizioneBreve"
+          rows="3"
+          placeholder="Inserisci una breve descrizione"
+          required
+        ></textarea>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="azienda" class="form-label">Azienda</label>
+        <input
+          type="text"
+          id="azienda"
+          class="form-control"
+          formControlName="azienda"
+          placeholder="Inserisci il nome dell'azienda"
+          required
+        />
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="provincia" class="form-label">Provincia</label>
+        <input
+          type="text"
+          id="provincia"
+          class="form-control"
+          formControlName="provincia"
+          placeholder="Inserisci la provincia"
+          required
+        />
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="smartWorking" class="form-label">Smart Working</label>
+        <select
+          id="smartWorking"
+          class="form-control"
+          formControlName="smartWorking"
+          required
+        >
+          <option [value]="true">Sì</option>
+          <option [value]="false">No</option>
+        </select>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="retribuzione" class="form-label">Retribuzione Lordo (€)</label>
+        <input
+          type="number"
+          id="retribuzione"
+          class="form-control"
+          formControlName="retribuzioneLordo"
+          placeholder="Inserisci la retribuzione"
+          required
+        />
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="contratto" class="form-label">Tipologia Contratto</label>
+        <input
+          type="text"
+          id="contratto"
+          class="form-control"
+          formControlName="tipologiaContratto"
+          placeholder="Inserisci la tipologia di contratto"
+          required
+        />
+      </div>
+  
+      <!-- Aggiungi offerta -->
+      <button type="submit" class="btn btn-primary btn-block mt-3">Aggiungi Offerta</button>
+  
+      <!-- Bottone per tornare alla Home Page -->
+      <button class="btn btn-secondary mt-3 w-100" routerLink="/">Torna alla Home Page</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,17 @@
+.container {
+    max-width: 600px;
+  }
+  
+  h2 {
+    color: #d9534f;
+  }
+  
+  button {
+    width: 100%;
+  }
+  
+  .alert {
+    text-align: center;
+    font-weight: bold;
+  }
+  

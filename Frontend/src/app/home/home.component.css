@@ -1,0 +1,31 @@
+/* Centra il contenuto della pagina */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Spaziatura personalizzata per i bottoni di navigazione */
+  .navigation {
+    margin-top: 30px;
+  }
+  
+  /* Aggiungi margine inferiore alla card */
+  .card {
+    transition: transform 0.2s ease;
+  }
+  
+  /* Effetto hover per la card */
+  .card:hover {
+    transform: translateY(-10px);
+  }
+  
+  /* Personalizza il footer della card per i bottoni */
+  .card-footer {
+    background-color: #f8f9fa;
+    text-align: center;
+  }
+  
+  .card-footer .btn {
+    margin-right: 10px;
+  }
+  

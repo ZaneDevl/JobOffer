@@ -1,0 +1,24 @@
+/* Limita la larghezza del form per mantenerlo centrato */
+.container {
+    max-width: 800px; /* Aumentato un po' per renderlo più largo */
+  }
+  
+  /* Aggiungi un'ombra e un bordo arrotondato per il form */
+  form {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Personalizza i bottoni */
+  button {
+    width: 100%;
+  }
+  
+  /* Aggiungi margini al bottone di ritorno alla Home */
+  button.btn-secondary {
+    margin-top: 10px;
+  }
+  

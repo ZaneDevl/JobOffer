@@ -1,0 +1,16 @@
+.container {
+    max-width: 800px;
+  }
+  
+  button {
+    width: 48%;
+  }
+  
+  button:first-child {
+    margin-right: 4%;
+  }
+  
+  .list-group-item {
+    margin-bottom: 10px;
+  }
+  

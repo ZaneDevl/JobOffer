@@ -1,0 +1,97 @@
+<div class="container mt-5 shadow-lg p-4 rounded bg-light">
+    <button routerLink="/" class="btn btn-secondary mb-3">Torna alla Home</button>
+  
+    <h2 class="text-primary text-center mb-4">Modifica Offerta di Lavoro</h2>
+  
+    <!-- Form per il caricamento dell'offerta tramite ID -->
+    <div class="form-group mb-4">
+      <label for="id" class="form-label">ID Offerta</label>
+      <input
+        type="text"
+        id="id"
+        class="form-control"
+        [(ngModel)]="offerId"
+        placeholder="Inserisci l'ID dell'offerta"
+      />
+      <button class="btn btn-primary mt-2" (click)="loadOffer()">Carica Offerta</button>
+    </div>
+  
+     <!-- Form per la modifica dell'offerta -->
+  <form *ngIf="offer" [formGroup]="editOfferForm" (ngSubmit)="onSubmit()">
+    <div class="form-group mb-3">
+      <label for="titolo" class="form-label">Titolo</label>
+      <input
+        type="text"
+        id="titolo"
+        class="form-control"
+        formControlName="titolo"
+        placeholder="Modifica il titolo"
+      />
+    </div>
+  
+      <div class="form-group mb-3">
+        <label for="descrizione" class="form-label">Descrizione Breve</label>
+        <textarea
+          id="descrizione"
+          class="form-control"
+          formControlName="descrizioneBreve"
+          placeholder="Modifica la descrizione"
+        ></textarea>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="azienda" class="form-label">Azienda</label>
+        <input
+          type="text"
+          id="azienda"
+          class="form-control"
+          formControlName="azienda"
+          placeholder="Modifica il nome dell'azienda"
+        />
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="provincia" class="form-label">Provincia</label>
+        <input
+          type="text"
+          id="provincia"
+          class="form-control"
+          formControlName="provincia"
+          placeholder="Modifica la provincia"
+        />
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="smartWorking" class="form-label">Smart Working</label>
+        <select id="smartWorking" class="form-control" formControlName="smartWorking">
+          <option [value]="true">Sì</option>
+          <option [value]="false">No</option>
+        </select>
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="retribuzione" class="form-label">Retribuzione Lordo (€)</label>
+        <input
+          type="number"
+          id="retribuzione"
+          class="form-control"
+          formControlName="retribuzioneLordo"
+          placeholder="Modifica la retribuzione"
+        />
+      </div>
+  
+      <div class="form-group mb-3">
+        <label for="contratto" class="form-label">Tipologia Contratto</label>
+        <input
+          type="text"
+          id="contratto"
+          class="form-control"
+          formControlName="tipologiaContratto"
+          placeholder="Modifica la tipologia di contratto"
+        />
+      </div>
+  
+      <button type="submit" class="btn btn-primary btn-block mt-3">Salva Modifiche</button>
+    </form>
+  </div>
+  

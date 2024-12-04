@@ -1,0 +1,61 @@
+<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">Cerca Offerte di Lavoro</h1>
+  
+    <!-- Modulo di ricerca -->
+    <form [formGroup]="searchForm" (ngSubmit)="onSearch()">
+      <div class="form-group mb-3">
+        <label for="testo" class="form-label">Parola Chiave</label>
+        <input
+          type="text"
+          id="testo"
+          formControlName="testo"
+          class="form-control"
+          placeholder="Es. Sviluppatore Web"
+        />
+      </div>
+      
+      <div class="form-group mb-3">
+        <label for="limit" class="form-label">Risultati da Mostrare</label>
+        <input
+          type="number"
+          id="limit"
+          formControlName="limit"
+          class="form-control"
+          placeholder="Es. 10"
+        />
+      </div>
+  
+      <div class="d-flex justify-content-between">
+        <button routerLink="/" class="btn btn-secondary mt-3">Torna alla Home Page</button>
+        <button type="submit" class="btn btn-primary mt-3">Cerca</button>
+      </div>
+    </form>
+  
+    <!-- Messaggio di errore -->
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+      {{ errorMessage }}
+    </div>
+  
+    <!-- Loading spinner -->
+    <div *ngIf="loading" class="spinner-border text-primary mt-3" role="status">
+      <span class="sr-only">Caricamento...</span>
+    </div>
+  
+    <!-- Risultati della ricerca -->
+    <div *ngIf="offerte && offerte.length > 0" class="mt-4">
+      <h2 class="text-center text-success">Offerte trovate</h2>
+      <ul class="list-group">
+        <li *ngFor="let offerta of offerte" class="list-group-item">
+          <h3>{{ offerta.titolo }}</h3>
+          <p><strong>Descrizione:</strong> {{ offerta.descrizioneBreve }}</p>
+          <p><strong>Azienda:</strong> {{ offerta.azienda }}</p>
+          <p><strong>Provincia:</strong> {{ offerta.provincia }}</p>
+        </li>
+      </ul>
+    </div>
+  
+    <div *ngIf="!offerte || offerte.length === 0" class="alert alert-warning mt-3">
+      Nessuna offerta trovata.
+    </div>
+  </div>
+  

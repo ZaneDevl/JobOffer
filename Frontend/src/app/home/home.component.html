@@ -1,0 +1,39 @@
+<div class="container mt-5">
+    <h1 class="text-center text-primary mb-4">Offerte di Lavoro</h1>
+  
+    <!-- Lista delle offerte -->
+    <div *ngIf="offerte.length > 0; else noOffers">
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 mb-4" *ngFor="let offerta of offerte">
+          <div class="card shadow-lg border-primary h-100">
+            <div class="card-body">
+              <h5 class="card-title text-primary">{{ offerta.titolo }}</h5>
+              <p class="card-text"><strong>Descrizione:</strong> {{ offerta.descrizioneBreve }}</p>
+              <p class="card-text"><strong>Azienda:</strong> {{ offerta.azienda }}</p>
+              <p class="card-text"><strong>Provincia:</strong> {{ offerta.provincia }}</p>
+              <p class="card-text"><strong>Retribuzione Lordo:</strong> {{ offerta.retribuzioneLordo }} €</p>
+              <p class="card-text"><strong>Smart Working:</strong> {{ offerta.smartWorking ? 'Sì' : 'No' }}</p>
+              <p class="card-text"><strong>Data Inserimento:</strong> {{ offerta.dataInserimento | date }}</p>
+            </div>
+            <div class="card-footer">
+              <a routerLink="/edit-offer/{{ offerta._id }}" class="btn btn-warning btn-sm">Modifica</a>
+              <button class="btn btn-danger btn-sm" (click)="onDelete(offerta._id)">Elimina</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Collegamenti alle altre pagine -->
+    <div class="text-center mt-4">
+      <a routerLink="/new-offer" class="btn btn-primary btn-lg mr-3">Nuova Offerta</a>
+      <a routerLink="/search-offer" class="btn btn-success btn-lg">Cerca Offerte</a>
+    </div>
+  
+    <ng-template #noOffers>
+      <div class="alert alert-info text-center">
+        Nessuna offerta di lavoro disponibile.
+      </div>
+    </ng-template>
+  </div>
+  

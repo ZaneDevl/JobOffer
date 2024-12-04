@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <h2 class="text-center text-danger mb-4">Elimina Offerta di Lavoro</h2>
+  
+    <!-- Messaggio di successo o errore -->
+    <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+  
+    <form (ngSubmit)="onDelete()">
+      <div class="form-group mb-3">
+        <label for="offerId" class="form-label">Inserisci l'ID dell'offerta da eliminare:</label>
+        <input
+          type="text"
+          id="offerId"
+          [(ngModel)]="offerId"
+          name="offerId"
+          class="form-control"
+          placeholder="Inserisci ID"
+          required
+        />
+      </div>
+  
+      <button type="submit" class="btn btn-danger btn-block">Elimina Offerta</button>
+    </form>
+  
+    <button routerLink="/" class="btn btn-primary mt-3 btn-block">Torna alla Home Page</button>
+  </div>
+  
